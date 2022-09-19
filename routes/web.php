@@ -18,6 +18,9 @@ require __DIR__.'/auth.php';
 |
 */
 
+/*
+ * Ресурсный контроллер для этого роута не нужен
+ */
 Route::get('/', [MainController::class,'index'])->name('main.index');
 
 

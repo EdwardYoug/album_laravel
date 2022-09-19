@@ -8,12 +8,23 @@ use App\Models\Photo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+/*
+ * Этот контроллер не должен быть ресурсным (снеси все неиспользуемые методы). Ресурсные контроллеры предназначены для REST.
+ * тут REST нету и не предвидиться
+ */
+
 class MainController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
+     */
+    /*
+     * 1) return =! аннотации
+     * 2) if else по моему тут не нужно само по себе, можно обойтись if внутри которого есть return.
+     * 3) У тебя и в if и в else возвращается одно и то же
+     * 4) Проверить авторизацию можно в Request, или если тебе нужен просто userId - его можно вытащить из view
      */
     public function index()
     {

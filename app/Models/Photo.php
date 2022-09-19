@@ -11,6 +11,10 @@ class Photo extends Model
     protected $table = 'photos';
     protected $guarded = false;
 
+    /*
+     * Настроить автоматическое форматирование в IDE по PSR4
+     */
+
     public function album() {
         return $this->belongsTo(Album::class, 'album_id','id');
     }

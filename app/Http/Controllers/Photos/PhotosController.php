@@ -9,7 +9,9 @@ use App\Models\Photo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-
+/*
+ * Снеси не используемые методы и обозначь в рутах каке методы доступны
+ */
 
 class PhotosController extends Controller
 {

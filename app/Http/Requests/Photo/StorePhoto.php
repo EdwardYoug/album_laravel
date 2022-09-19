@@ -11,6 +11,9 @@ class StorePhoto extends FormRequest
      *
      * @return bool
      */
+    /*
+     * Тут необходимо проверить авторизован ли текущий user, а не просто вернуть true
+     */
     public function authorize()
     {
         return true;
