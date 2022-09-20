@@ -28,6 +28,6 @@ Route::get('/dashboard', function() {
     return view('dashboard');
 })->name('dashboard');
 
-
+//Указать только те методы для каждого роута которые по факту есть в котроллерах. пустых методов в контроллерах быть не должно.
 Route::resource('albums',AlbumsController::class)->middleware(['auth']);
 Route::resource('photos',PhotosController::class)->middleware(['auth']);

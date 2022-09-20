@@ -42,6 +42,9 @@ class PhotosController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    /*
+     * Аннотация != ответ
+     */
     public function store(StorePhoto $request)
     {
 
@@ -52,10 +55,17 @@ class PhotosController extends Controller
 //        dd($files);
         foreach ($files as $key => $file) {
             $image = Storage::disk('public')->put('/photos', $file);
+            //Заменить на findOrFail
             $album = Album::find($request->album_id);
+            //Зачем ты кладешь album_id в перемеенную?
             $album_id = $request->album_id;
-
+            // Условие избыточно. $image у тебя полюбому есть, так как если это не так - ты не попадешь в контроллер
+            // или приложение вылетит при сохранении. album_id также уже прошел валидацию в Request, а вслучае если
+            // албома не найдется - отработает findOrFail. is_numeric - не надо.
+            // И лесенка из if - зло. Если у тебя получается так - скорее всего ты делаешь что то не правильно.
             if($image && isset($album_id) && is_numeric($album_id)){
+                // Юзать хелпер Arr::
+                //Весь if заменить на ??
                 if($captions[$key] !== NULL) {
                     Photo::create([
                         'caption' => $captions[$key],

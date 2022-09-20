@@ -44,6 +44,7 @@
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script src="/dist/js/bootstrap.min.js"></script>
 
+{{--Все скрипты лучше выносить в отдельные файлы и через mix сжимать. почитай про это и сделай--}}
 
 <script>
     jQuery(document).ready(function ($) {
@@ -139,6 +140,7 @@
 
 
 <script>
+{{--Что это?--}}
     $(document).ready(function() {
 
 
